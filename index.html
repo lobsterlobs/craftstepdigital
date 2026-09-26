@@ -1101,33 +1101,16 @@
 
   
     /* Project news */
-    .news-section { padding-top: 110px; padding-bottom: 110px; }
-    .news-list { display: grid; gap: 30px; }
-    .news-card {
-      display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-      gap: 42px; align-items: center; padding: 34px;
-      border: 1px solid var(--line); border-radius: var(--radius);
-      background: rgba(255,250,242,.78); box-shadow: var(--shadow);
-    }
-    .news-card.platform-news { grid-template-columns: 1fr; }
-    .news-copy h2 { margin: 10px 0 18px; font-size: clamp(32px, 4vw, 58px); line-height: 1.02; }
-    .news-copy p { color: var(--muted); font-size: 17px; line-height: 1.75; max-width: 72ch; }
-    .news-copy p + p { margin-top: 14px; }
-    .news-meta { display: inline-flex; gap: 10px; align-items: center; font-weight: 800; color: var(--digital-dark); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-    .news-platform-link { display: inline-flex; margin-top: 12px; font-weight: 900; color: var(--digital); border-bottom: 1px solid currentColor; }
-    .news-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
-    .news-gallery figure { margin: 0; padding: 12px; border-radius: 22px; background: #fff; border: 1px solid rgba(23,50,58,.10); box-shadow: 0 18px 45px rgba(49,42,31,.09); display:flex; flex-direction:column; }
-    .news-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 85 / 200; object-fit: contain; border-radius: 14px; background:#fff; }
-    .news-gallery figcaption { padding: 10px 4px 2px; color: var(--muted); font-size: 12px; text-align: center; margin-top:auto; }
-    @media (max-width: 860px) {
-      .news-card { grid-template-columns: 1fr; padding: 22px; gap: 26px; }
-      .news-gallery { grid-template-columns: 1fr; gap: 18px; max-width: 460px; margin: 0 auto; width:100%; }
-      .news-gallery figure { width:100%; }
-      .news-gallery img { width:100%; max-height:none; }
-      .news-copy h2 { font-size: clamp(30px, 9vw, 44px); }
-    }
-      .news-gallery { gap: 12px; }
-    }
+    .news-section { padding-top: 96px; padding-bottom: 96px; }
+    .news-home-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    .news-home-card { padding:28px; border:1px solid var(--line); border-radius:var(--radius); background:rgba(255,250,242,.78); box-shadow:var(--shadow); }
+    .news-home-card h3 { font-size:clamp(24px,3vw,34px); line-height:1.1; margin:12px 0 14px; }
+    .news-home-card p { color:var(--muted); line-height:1.7; }
+    .news-meta { font-weight:800; color:var(--digital-dark); font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .news-read-more { display:inline-block; margin-top:14px; color:var(--digital); font-weight:900; }
+    .news-all-wrap { margin-top:24px; }
+    @media (max-width:760px){ .news-home-grid{grid-template-columns:1fr;} .news-home-card{padding:22px;} }
+
 
   </style>
 <link href="https://craftstepdigital.eu/?lang=en" hreflang="en" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=bg" hreflang="bg" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=mk" hreflang="mk" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=el" hreflang="el" rel="alternate"/></head>
@@ -1142,7 +1125,7 @@
 <span></span><span></span><span></span>
 </button>
 <nav aria-label="Main navigation" class="main-nav" id="main-navigation">
-<a data-i18n="nav.news" href="#news">News</a>
+<a data-i18n="nav.news" href="news.html">News</a>
 <a data-i18n="nav.journey" href="#journey">Journey</a>
 <a data-i18n="nav.objectives" href="#objectives">Objectives</a>
 <a data-i18n="nav.activities" href="#work-packages">Work packages</a>
@@ -1249,44 +1232,29 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
 
 
 
-<section class="news-section section" data-stage="1" id="news">
+
+<section class="news-section section" id="news">
   <div class="section-heading reveal">
     <span class="eyebrow" data-i18n="news.eyebrow">Project news</span>
-    <h2 data-i18n="news.heading">Follow the CraftStep Digital journey.</h2>
-    <p data-i18n="news.intro">Updates from the partnership, practical activities, meetings and project results.</p>
+    <h2 data-i18n="news.home.title">Latest from CraftStep Digital.</h2>
+    <p data-i18n="news.home.intro">Follow project meetings, practical activities and results as the Craft → Industry → Market journey develops.</p>
   </div>
-
-  <div class="news-list">
-    <article class="news-card platform-news reveal">
-      <div class="news-copy">
-        <div class="news-meta" data-i18n="news.platform.meta">25 September 2026 · Digital platform</div>
-        <h2 data-i18n="news.platform.title">The official CraftStep Digital platform is now online.</h2>
-        <p data-i18n="news.platform.p1">craftstepdigital.eu is the official public platform of CraftStep Digital: Learning Shoemaking Through Real Practice. It will document the project throughout its implementation and bring together the partnership, activities and results in one accessible digital space.</p>
-        <p data-i18n="news.platform.p2">The platform follows the full Craft → Industry → Market pathway: practical craft learning in Bulgaria, industrial footwear production in North Macedonia, and digital market presentation in Greece. Visitors will find information about the project objectives, work packages, partners, timeline and EQAVET quality approach.</p>
-        <p data-i18n="news.platform.p3">As the project develops, the platform will grow with news from meetings and practical sessions, student work, prototypes, NFC-based digital product profiles and public project results. Its purpose is not only to present information, but to create a visible digital record of how a student idea becomes a real, traceable product.</p>
-        <a class="news-platform-link" href="https://craftstepdigital.eu/" data-i18n="news.platform.link">craftstepdigital.eu · Official project platform</a>
-      </div>
+  <div class="news-home-grid">
+    <article class="news-home-card reveal">
+      <div class="news-meta" data-i18n="news.platform.meta">25 September 2026 · Digital platform</div>
+      <h3 data-i18n="news.platform.title">The official CraftStep Digital platform is now online.</h3>
+      <p data-i18n="news.home.platform.excerpt">The official project platform will document activities, partners, student work, prototypes and digital product profiles throughout the project.</p>
+      <a class="news-read-more" href="news.html#platform" data-i18n="news.readmore">Read more →</a>
     </article>
-
-    <article class="news-card reveal">
-      <div class="news-copy">
-        <div class="news-meta" data-i18n="news.meeting.meta">26 September 2026 · Project preparation</div>
-        <h2 data-i18n="news.meeting.title">Preparing for our first CraftStep Digital project meeting.</h2>
-        <p data-i18n="news.meeting.p1">The partnership is preparing for the first project meeting and the practical start of the joint work. This first step will bring the partners together around the implementation plan, responsibilities and the opening phase of the CraftStep → Industry → Market learning pathway.</p>
-        <p data-i18n="news.meeting.p2">As part of the preparation, the official CraftStep Digital visual materials are also ready. The two project roll-ups present the journey of one shoe across three countries and the link between student ideas, real practice, QR/NFC connectivity and digital product identity.</p>
-        <p data-i18n="news.meeting.p3">The roll-ups will accompany partner meetings, learning activities and public presentations in Bulgaria, North Macedonia and Greece. We are looking forward to bringing the team together and starting the first practical activities.</p>
-      </div>
-      <div class="news-gallery" aria-label="Official CraftStep Digital roll-up previews">
-        <figure>
-          <img src="assets/news/rollup-01.jpg" alt="Official CraftStep Digital roll-up: One shoe, three countries, one digital journey" loading="lazy">
-          <figcaption data-i18n="news.rollup1">One shoe. Three countries. One digital journey.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/news/rollup-02.jpg" alt="Official CraftStep Digital roll-up: Craft meets Digital" loading="lazy">
-          <figcaption data-i18n="news.rollup2">Craft meets Digital</figcaption>
-        </figure>
-      </div>
+    <article class="news-home-card reveal">
+      <div class="news-meta" data-i18n="news.meeting.meta">26 September 2026 · Project preparation</div>
+      <h3 data-i18n="news.meeting.title">Preparing for our first CraftStep Digital project meeting.</h3>
+      <p data-i18n="news.home.meeting.excerpt">The partnership is preparing for the first project meeting and the practical start of the joint work.</p>
+      <a class="news-read-more" href="news.html#first-meeting" data-i18n="news.readmore">Read more →</a>
     </article>
+  </div>
+  <div class="news-all-wrap reveal">
+    <a class="button primary" href="news.html" data-i18n="news.all">All project news</a>
   </div>
 </section>
 
@@ -1546,6 +1514,7 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET',
         'nav.news': 'News', 'nav.journey': 'Journey', 'nav.objectives': 'Objectives', 'nav.partners': 'Partners', 'nav.timeline': 'Timeline', 'nav.eqavet': 'EQAVET',
         'news.eyebrow': 'Project news',
+        'news.home.title': 'Latest from CraftStep Digital.', 'news.home.intro': 'Follow project meetings, practical activities and results as the Craft → Industry → Market journey develops.', 'news.home.platform.excerpt': 'The official project platform will document activities, partners, student work, prototypes and digital product profiles throughout the project.', 'news.home.meeting.excerpt': 'The partnership is preparing for the first project meeting and the practical start of the joint work.', 'news.readmore': 'Read more →', 'news.all': 'All project news',
         'news.heading': 'Follow the CraftStep Digital journey.',
         'news.intro': 'Updates from the partnership, practical activities, meetings and project results.',
         'news.platform.meta': '25 September 2026 · Digital platform',
@@ -1576,6 +1545,7 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET проект за обувно производство', metaDescription: 'CraftStep Digital е Erasmus+ KA210-VET проект, който свързва занаятчийското обувно производство, индустриалната изработка, дигиталната идентичност на продукта и пазарно ориентираното обучение в България, Северна Македония и Гърция.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Новини', 'nav.journey': 'Пътят', 'nav.objectives': 'Цели', 'nav.partners': 'Партньори', 'nav.timeline': 'График', 'nav.eqavet': 'EQAVET',
         'news.eyebrow': 'Новини от проекта',
+        'news.home.title': 'Последно от CraftStep Digital.', 'news.home.intro': 'Следете проектните срещи, практическите дейности и резултатите по пътя Craft → Industry → Market.', 'news.home.platform.excerpt': 'Официалната платформа ще документира дейностите, партньорите, ученическата работа, прототипите и дигиталните продуктови профили.', 'news.home.meeting.excerpt': 'Партньорството се подготвя за първата проектна среща и практическото начало на съвместната работа.', 'news.readmore': 'Прочети повече →', 'news.all': 'Всички новини',
         'news.heading': 'Следвайте пътя на CraftStep Digital.',
         'news.intro': 'Новини от партньорството, практическите дейности, срещите и резултатите по проекта.',
         'news.platform.meta': '25 септември 2026 г. · Дигитална платформа',
@@ -1604,6 +1574,7 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET проект за чевларство', metaDescription: 'CraftStep Digital е Erasmus+ KA210-VET проект што ги поврзува занаетчиското чевларство, индустриското производство, дигиталниот идентитет на производот и пазарно ориентираното учење во Бугарија, Северна Македонија и Грција.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Новости', 'nav.journey': 'Патека', 'nav.objectives': 'Цели', 'nav.partners': 'Партнери', 'nav.timeline': 'План', 'nav.eqavet': 'EQAVET',
         'news.eyebrow': 'Новости од проектот',
+        'news.home.title': 'Најново од CraftStep Digital.', 'news.home.intro': 'Следете ги проектните средби, практичните активности и резултатите по патеката Craft → Industry → Market.', 'news.home.platform.excerpt': 'Официјалната платформа ќе ги документира активностите, партнерите, ученичката работа, прототипите и дигиталните профили на производите.', 'news.home.meeting.excerpt': 'Партнерството се подготвува за првата проектна средба и практичниот почеток на заедничката работа.', 'news.readmore': 'Прочитај повеќе →', 'news.all': 'Сите новости',
         'news.heading': 'Следете го патот на CraftStep Digital.',
         'news.intro': 'Новости од партнерството, практичните активности, средбите и резултатите од проектот.',
         'news.platform.meta': '25 септември 2026 · Дигитална платформа',
@@ -1632,6 +1603,7 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET έργο υποδηματοποιίας', metaDescription: 'Το CraftStep Digital είναι έργο Erasmus+ KA210-VET που συνδέει τη βιοτεχνική υποδηματοποιία, τη βιομηχανική παραγωγή, την ψηφιακή ταυτότητα προϊόντος και τη μάθηση με προσανατολισμό στην αγορά σε Βουλγαρία, Βόρεια Μακεδονία και Ελλάδα.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Νέα', 'nav.journey': 'Διαδρομή', 'nav.objectives': 'Στόχοι', 'nav.partners': 'Εταίροι', 'nav.timeline': 'Χρονοδιάγραμμα', 'nav.eqavet': 'EQAVET',
         'news.eyebrow': 'Νέα του έργου',
+        'news.home.title': 'Τα τελευταία νέα από το CraftStep Digital.', 'news.home.intro': 'Παρακολουθήστε τις συναντήσεις, τις πρακτικές δραστηριότητες και τα αποτελέσματα στη διαδρομή Craft → Industry → Market.', 'news.home.platform.excerpt': 'Η επίσημη πλατφόρμα θα τεκμηριώνει τις δραστηριότητες, τους εταίρους, τις εργασίες μαθητών, τα πρωτότυπα και τα ψηφιακά προφίλ προϊόντων.', 'news.home.meeting.excerpt': 'Η σύμπραξη προετοιμάζεται για την πρώτη συνάντηση του έργου και την πρακτική έναρξη της κοινής εργασίας.', 'news.readmore': 'Διαβάστε περισσότερα →', 'news.all': 'Όλα τα νέα',
         'news.heading': 'Ακολουθήστε τη διαδρομή του CraftStep Digital.',
         'news.intro': 'Νέα από τη σύμπραξη, τις πρακτικές δραστηριότητες, τις συναντήσεις και τα αποτελέσματα του έργου.',
         'news.platform.meta': '25 Σεπτεμβρίου 2026 · Ψηφιακή πλατφόρμα',

@@ -1112,7 +1112,29 @@
     @media (max-width:760px){ .news-home-grid{grid-template-columns:1fr;} .news-home-card{padding:22px;} }
 
 
-  </style>
+  
+    /* Realistic animated hero visual */
+    .realistic-hero-card{
+      min-height: 0;
+      aspect-ratio: 4 / 3;
+      padding: 0;
+      overflow: hidden;
+      background: rgba(255,250,242,.82);
+    }
+    .realistic-hero-card::before,
+    .realistic-hero-card::after{ display:none; }
+    .realistic-hero-visual{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+    @media (max-width:980px){
+      .realistic-hero-card{ aspect-ratio:4/3; min-height:0; }
+      .realistic-hero-visual{ object-fit:contain; background:#fffaf2; }
+    }
+</style>
 <link href="https://craftstepdigital.eu/?lang=en" hreflang="en" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=bg" hreflang="bg" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=mk" hreflang="mk" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=el" hreflang="el" rel="alternate"/></head>
 <body>
 <div aria-hidden="true" class="grain"></div>
@@ -1148,84 +1170,9 @@
 <a class="button ghost" data-i18n="hero.cta2" href="#partners">Meet the partnership</a>
 </div>
 </div>
-<div aria-label="Animated premium shoe construction visual" class="shoe-stage shoe-stage-premium">
-<div class="shoe-card premium-shoe-card">
-<div class="studio-label">CraftStep Studio Motion</div>
-<div aria-label="Animated shoe construction: sole, leather upper, laces and digital identity" class="logo-motion-stage" role="img">
-<svg aria-hidden="true" class="build-shoe-svg" viewbox="0 0 1000 620">
-<defs>
-<lineargradient gradientunits="userSpaceOnUse" id="soleBuildGradient" x1="110" x2="930" y1="420" y2="455">
-<stop offset="0" stop-color="#2f1d12"></stop>
-<stop offset="0.42" stop-color="#81502f"></stop>
-<stop offset="1" stop-color="#20120b"></stop>
-</lineargradient>
-<lineargradient gradientunits="userSpaceOnUse" id="leatherBuildGradient" x1="156" x2="930" y1="210" y2="405">
-<stop offset="0" stop-color="#bd7c47"></stop>
-<stop offset="0.45" stop-color="#87502d"></stop>
-<stop offset="1" stop-color="#3a2113"></stop>
-</lineargradient>
-<lineargradient gradientunits="userSpaceOnUse" id="leatherHighlight" x1="190" x2="840" y1="210" y2="386">
-<stop offset="0" stop-color="#ffffff" stop-opacity=".56"></stop>
-<stop offset=".48" stop-color="#ffffff" stop-opacity=".11"></stop>
-<stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop>
-</lineargradient>
-<lineargradient gradientunits="userSpaceOnUse" id="energyLineBuild" x1="610" x2="725" y1="292" y2="92">
-<stop offset="0" stop-color="#1d5f99"></stop>
-<stop offset="1" stop-color="#ffd43b"></stop>
-</lineargradient>
-</defs>
-<ellipse class="build-shadow" cx="520" cy="492" rx="392" ry="30"></ellipse>
-<path class="sketch-line" d="M128 388 C164 322 212 268 282 234 C338 207 390 188 443 190 C510 193 552 230 586 278 C639 302 690 313 742 324 C820 341 892 360 934 386"></path>
-<path class="sketch-line" d="M118 438 L850 446 C901 444 938 420 948 386"></path>
-<path class="build-sole" d="M124 402 C204 418 276 428 356 431 L742 438 C822 440 894 425 935 394 C946 386 945 375 931 371 C901 365 858 386 799 397 C722 412 628 410 504 400 L303 389 C229 385 166 369 127 350 C105 365 99 391 124 402 Z
-M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900 457 844 467 C689 494 330 476 144 446 C111 440 94 426 111 407 Z"></path>
-<path class="build-sole-line" d="M122 421 C215 438 304 448 407 451 L748 457 C830 458 897 442 934 415"></path>
-<path class="build-upper" d="M158 360 C164 318 188 282 226 253 C269 221 331 204 389 187 C438 172 491 181 532 211 C560 232 581 258 602 286 C647 304 695 314 745 325 C820 342 889 360 932 382 C952 392 950 406 929 416 C873 445 748 446 616 432 L360 425 C260 421 190 398 158 360 Z"></path>
-<path class="build-collar" d="M300 222 C356 188 454 181 533 218 C501 232 470 256 443 293 C395 270 346 245 300 222 Z"></path>
-<path class="build-quarter" d="M185 357 C196 305 236 263 300 229 C335 211 360 201 389 190 C412 240 431 286 444 336 C401 389 358 414 296 415 C242 407 201 386 185 357 Z"></path>
-<path class="build-vamp" d="M442 336 C475 278 517 240 568 218 C626 254 666 292 736 321 C696 378 638 411 558 415 C512 398 474 371 442 336 Z"></path>
-<path class="build-toe" d="M734 322 C810 338 889 360 932 383 C912 411 842 427 755 421 C714 396 704 360 734 322 Z"></path>
-<path class="build-tongue" d="M438 231 C481 227 530 245 572 276 C536 302 514 339 502 408 L429 403 C425 331 428 273 438 231 Z"></path>
-<path class="build-highlight" d="M212 344 C272 263 373 203 488 201 C458 224 430 261 400 316 C347 348 280 357 212 344 Z"></path>
-<path class="build-stitch" d="M181 358 C269 399 386 414 545 418 C701 424 850 417 929 383"></path>
-<path class="build-stitch" d="M293 229 C349 279 396 310 444 337"></path>
-<path class="build-stitch" d="M568 218 C548 280 533 345 529 409"></path>
-<path class="build-stitch" d="M343 219 C387 248 421 283 444 336"></path>
-<path class="panel-line" d="M300 223 C346 245 395 270 443 293"></path>
-<path class="build-stitch" d="M735 320 C718 352 711 383 754 421"></path>
-<g class="build-eyelets">
-<circle cx="461" cy="276" r="8"></circle>
-<circle cx="506" cy="292" r="8"></circle>
-<circle cx="439" cy="313" r="8"></circle>
-<circle cx="486" cy="331" r="8"></circle>
-<circle cx="426" cy="350" r="8"></circle>
-<circle cx="474" cy="368" r="8"></circle>
-</g>
-<path class="build-lace" d="M461 276 L506 292 L439 313 L486 331 L426 350 L474 368"></path>
-<path class="build-lace" d="M506 292 C563 301 607 323 646 355"></path>
-<rect class="build-chip" height="40" rx="9" width="56" x="594" y="302"></rect>
-<path class="nfc-beam" d="M650 320 C706 318 766 337 842 383"></path>
-<path class="nfc-beam secondary" d="M640 341 C700 374 775 405 868 421"></path>
-<path class="chip-trace" d="M594 322 C560 320 526 306 484 292"></path>
-<path class="build-nfc" d="M662 295 C690 323 690 356 662 384"></path>
-<path class="build-nfc" d="M686 275 C735 321 735 360 686 407"></path>
-<g class="solar-panel-build">
-  <polygon points="520,86 632,60 676,104 560,132"></polygon>
-</g>
-<path class="solar-panel-grid" d="M545 80 L590 121 M574 73 L620 114 M603 66 L650 107 M536 102 L651 75 M551 122 L666 94"></path>
-<circle class="build-sun" cx="705" cy="92" r="20"></circle>
-<path class="sun-spokes" d="M705 50 L705 28 M705 155 L705 130 M747 92 L772 92 M662 92 L638 92 M735 62 L754 43 M675 122 L656 141 M675 62 L656 43 M735 122 L754 141"></path>
-<path class="solar-beam" d="M686 94 C655 90 626 88 594 96"></path>
-<path class="solar-beam soft" d="M693 113 C653 125 613 127 560 132"></path>
-<path class="solar-beam" d="M600 128 C615 190 622 246 622 302"></path>
-<g class="build-stage-labels">
-<text class="build-label-sole" x="150" y="548">SOLE</text>
-<text class="build-label-upper" x="410" y="548">LEATHER UPPER</text>
-<text class="build-label-laces" x="690" y="548">LACES + NFC</text>
-</g>
-</svg>
-</div>
-<div class="shoe-caption premium-caption"><span data-i18n="stage.outline" id="stage-label">Outline</span><span class="progress-line"><b></b></span><span id="stage-percent">0%</span></div>
+<div aria-label="Animated realistic CraftStep shoe journey" class="shoe-stage shoe-stage-premium">
+<div class="shoe-card premium-shoe-card realistic-hero-card">
+  <img class="realistic-hero-visual" src="assets/hero-realistic-shoe.svg?v=20260926" alt="Realistic CraftStep Digital shoe showing the Craft, Industry and Market journey with NFC and QR elements"/>
 </div>
 </div>
 </section>

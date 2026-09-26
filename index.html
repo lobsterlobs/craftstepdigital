@@ -1102,21 +1102,30 @@
   
     /* Project news */
     .news-section { padding-top: 110px; padding-bottom: 110px; }
+    .news-list { display: grid; gap: 30px; }
     .news-card {
-      display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
       gap: 42px; align-items: center; padding: 34px;
       border: 1px solid var(--line); border-radius: var(--radius);
       background: rgba(255,250,242,.78); box-shadow: var(--shadow);
     }
+    .news-card.platform-news { grid-template-columns: 1fr; }
     .news-copy h2 { margin: 10px 0 18px; font-size: clamp(32px, 4vw, 58px); line-height: 1.02; }
-    .news-copy p { color: var(--muted); font-size: 17px; line-height: 1.75; max-width: 62ch; }
+    .news-copy p { color: var(--muted); font-size: 17px; line-height: 1.75; max-width: 72ch; }
+    .news-copy p + p { margin-top: 14px; }
     .news-meta { display: inline-flex; gap: 10px; align-items: center; font-weight: 800; color: var(--digital-dark); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-    .news-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: end; }
-    .news-gallery figure { margin: 0; padding: 12px; border-radius: 22px; background: #fff; border: 1px solid rgba(23,50,58,.10); box-shadow: 0 18px 45px rgba(49,42,31,.09); }
-    .news-gallery img { display: block; width: 100%; height: auto; border-radius: 14px; }
-    .news-gallery figcaption { padding: 10px 4px 2px; color: var(--muted); font-size: 12px; text-align: center; }
+    .news-platform-link { display: inline-flex; margin-top: 12px; font-weight: 900; color: var(--digital); border-bottom: 1px solid currentColor; }
+    .news-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .news-gallery figure { margin: 0; padding: 12px; border-radius: 22px; background: #fff; border: 1px solid rgba(23,50,58,.10); box-shadow: 0 18px 45px rgba(49,42,31,.09); display:flex; flex-direction:column; }
+    .news-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 85 / 200; object-fit: contain; border-radius: 14px; background:#fff; }
+    .news-gallery figcaption { padding: 10px 4px 2px; color: var(--muted); font-size: 12px; text-align: center; margin-top:auto; }
     @media (max-width: 860px) {
-      .news-card { grid-template-columns: 1fr; padding: 22px; }
+      .news-card { grid-template-columns: 1fr; padding: 22px; gap: 26px; }
+      .news-gallery { grid-template-columns: 1fr; gap: 18px; max-width: 460px; margin: 0 auto; width:100%; }
+      .news-gallery figure { width:100%; }
+      .news-gallery img { width:100%; max-height:none; }
+      .news-copy h2 { font-size: clamp(30px, 9vw, 44px); }
+    }
       .news-gallery { gap: 12px; }
     }
 
@@ -1239,27 +1248,46 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
 </section>
 
 
+
 <section class="news-section section" data-stage="1" id="news">
   <div class="section-heading reveal">
     <span class="eyebrow" data-i18n="news.eyebrow">Project news</span>
+    <h2 data-i18n="news.heading">Follow the CraftStep Digital journey.</h2>
+    <p data-i18n="news.intro">Updates from the partnership, practical activities, meetings and project results.</p>
   </div>
-  <article class="news-card reveal">
-    <div class="news-copy">
-      <div class="news-meta" data-i18n="news.meta">September 2026 · Preparation</div>
-      <h2 data-i18n="news.title">Getting ready for our first CraftStep Digital meeting.</h2>
-      <p data-i18n="news.text">Preparations are underway. Our two CraftStep Digital roll-ups are ready and the partnership is getting set for the first project meeting. We are looking forward to bringing the team together and starting the journey from craft, through industry, to market.</p>
-    </div>
-    <div class="news-gallery" aria-label="CraftStep Digital roll-up previews">
-      <figure>
-        <img src="assets/news/rollup-01.jpg" alt="CraftStep Digital roll-up showing the Craft to Industry to Market journey" loading="lazy">
-        <figcaption data-i18n="news.rollup1">Craft → Industry → Market</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/news/rollup-02.jpg" alt="CraftStep Digital roll-up showing a digitally connected shoe" loading="lazy">
-        <figcaption data-i18n="news.rollup2">Craft meets Digital</figcaption>
-      </figure>
-    </div>
-  </article>
+
+  <div class="news-list">
+    <article class="news-card platform-news reveal">
+      <div class="news-copy">
+        <div class="news-meta" data-i18n="news.platform.meta">25 September 2026 · Digital platform</div>
+        <h2 data-i18n="news.platform.title">The official CraftStep Digital platform is now online.</h2>
+        <p data-i18n="news.platform.p1">craftstepdigital.eu is the official public platform of CraftStep Digital: Learning Shoemaking Through Real Practice. It will document the project throughout its implementation and bring together the partnership, activities and results in one accessible digital space.</p>
+        <p data-i18n="news.platform.p2">The platform follows the full Craft → Industry → Market pathway: practical craft learning in Bulgaria, industrial footwear production in North Macedonia, and digital market presentation in Greece. Visitors will find information about the project objectives, work packages, partners, timeline and EQAVET quality approach.</p>
+        <p data-i18n="news.platform.p3">As the project develops, the platform will grow with news from meetings and practical sessions, student work, prototypes, NFC-based digital product profiles and public project results. Its purpose is not only to present information, but to create a visible digital record of how a student idea becomes a real, traceable product.</p>
+        <a class="news-platform-link" href="https://craftstepdigital.eu/" data-i18n="news.platform.link">craftstepdigital.eu · Official project platform</a>
+      </div>
+    </article>
+
+    <article class="news-card reveal">
+      <div class="news-copy">
+        <div class="news-meta" data-i18n="news.meeting.meta">26 September 2026 · Project preparation</div>
+        <h2 data-i18n="news.meeting.title">Preparing for our first CraftStep Digital project meeting.</h2>
+        <p data-i18n="news.meeting.p1">The partnership is preparing for the first project meeting and the practical start of the joint work. This first step will bring the partners together around the implementation plan, responsibilities and the opening phase of the CraftStep → Industry → Market learning pathway.</p>
+        <p data-i18n="news.meeting.p2">As part of the preparation, the official CraftStep Digital visual materials are also ready. The two project roll-ups present the journey of one shoe across three countries and the link between student ideas, real practice, QR/NFC connectivity and digital product identity.</p>
+        <p data-i18n="news.meeting.p3">The roll-ups will accompany partner meetings, learning activities and public presentations in Bulgaria, North Macedonia and Greece. We are looking forward to bringing the team together and starting the first practical activities.</p>
+      </div>
+      <div class="news-gallery" aria-label="Official CraftStep Digital roll-up previews">
+        <figure>
+          <img src="assets/news/rollup-01.jpg" alt="Official CraftStep Digital roll-up: One shoe, three countries, one digital journey" loading="lazy">
+          <figcaption data-i18n="news.rollup1">One shoe. Three countries. One digital journey.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/news/rollup-02.jpg" alt="Official CraftStep Digital roll-up: Craft meets Digital" loading="lazy">
+          <figcaption data-i18n="news.rollup2">Craft meets Digital</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section class="project-purpose section" data-stage="1" id="purpose">
@@ -1517,7 +1545,22 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
         metaDescription: 'CraftStep Digital is an Erasmus+ KA210-VET project connecting craft-based shoemaking, industrial production, digital product identity and market-oriented learning across Bulgaria, North Macedonia and Greece.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET',
         'nav.news': 'News', 'nav.journey': 'Journey', 'nav.objectives': 'Objectives', 'nav.partners': 'Partners', 'nav.timeline': 'Timeline', 'nav.eqavet': 'EQAVET',
-        'news.eyebrow': 'Project news', 'news.meta': 'September 2026 · Preparation', 'news.title': 'Getting ready for our first CraftStep Digital meeting.', 'news.text': 'Preparations are underway. Our two CraftStep Digital roll-ups are ready and the partnership is getting set for the first project meeting. We are looking forward to bringing the team together and starting the journey from craft, through industry, to market.', 'news.rollup1': 'Craft → Industry → Market', 'news.rollup2': 'Craft meets Digital',
+        'news.eyebrow': 'Project news',
+        'news.heading': 'Follow the CraftStep Digital journey.',
+        'news.intro': 'Updates from the partnership, practical activities, meetings and project results.',
+        'news.platform.meta': '25 September 2026 · Digital platform',
+        'news.platform.title': 'The official CraftStep Digital platform is now online.',
+        'news.platform.p1': 'craftstepdigital.eu is the official public platform of CraftStep Digital: Learning Shoemaking Through Real Practice. It will document the project throughout its implementation and bring together the partnership, activities and results in one accessible digital space.',
+        'news.platform.p2': 'The platform follows the full Craft → Industry → Market pathway: practical craft learning in Bulgaria, industrial footwear production in North Macedonia, and digital market presentation in Greece. Visitors will find information about the project objectives, work packages, partners, timeline and EQAVET quality approach.',
+        'news.platform.p3': 'As the project develops, the platform will grow with news from meetings and practical sessions, student work, prototypes, NFC-based digital product profiles and public project results. Its purpose is not only to present information, but to create a visible digital record of how a student idea becomes a real, traceable product.',
+        'news.platform.link': 'craftstepdigital.eu · Official project platform',
+        'news.meeting.meta': '26 September 2026 · Project preparation',
+        'news.meeting.title': 'Preparing for our first CraftStep Digital project meeting.',
+        'news.meeting.p1': 'The partnership is preparing for the first project meeting and the practical start of the joint work. This first step will bring the partners together around the implementation plan, responsibilities and the opening phase of the CraftStep → Industry → Market learning pathway.',
+        'news.meeting.p2': 'As part of the preparation, the official CraftStep Digital visual materials are also ready. The two project roll-ups present the journey of one shoe across three countries and the link between student ideas, real practice, QR/NFC connectivity and digital product identity.',
+        'news.meeting.p3': 'The roll-ups will accompany partner meetings, learning activities and public presentations in Bulgaria, North Macedonia and Greece. We are looking forward to bringing the team together and starting the first practical activities.',
+        'news.rollup1': 'One shoe. Three countries. One digital journey.',
+        'news.rollup2': 'Craft meets Digital',
         'hero.eyebrow': 'Erasmus+ KA210-VET · Call 2026', 'hero.lead': 'Learning Shoemaking Through Real Practice.', 'hero.sub': 'From craft-based design in Bulgaria, through industrial production in North Macedonia, to market-oriented digital presentation in Greece.', 'hero.cta1': 'Explore the journey', 'hero.cta2': 'Meet the partnership',
         'purpose.eyebrow': 'Why this project matters', 'purpose.title': 'Helping young people see a future in their craft.', 'purpose.lead': 'CraftStep Digital shows students that shoemaking is not an outdated occupation, but a real European profession built on skill, technology and market value.', 'purpose.text': 'Through the development of 15 prototypes, industrial finalisation and digital traceability, the project connects school-based learning with real production and market environments. Students follow how an idea becomes a product, how a product gains identity, and how professional skills can open a path to employment and personal confidence.', 'purpose.visual.kicker': 'Project purpose', 'purpose.visual.title': 'A profession students can believe in.', 'purpose.card.craft.title': 'Traditional craft', 'purpose.card.craft.text': 'Learners build practical skills through tangible shoemaking results.', 'purpose.card.digital.title': 'Digital identity', 'purpose.card.digital.text': 'Each product receives an NFC-based profile and documented production pathway.', 'purpose.card.sustain.title': 'Sustainable thinking', 'purpose.card.sustain.text': 'The model promotes durable products, resource awareness and solar-powered visibility.', 'purpose.card.future.title': 'From classroom to market', 'purpose.card.future.text': 'Students see how their work can be presented, valued and connected to real opportunities.', 'purpose.quote': 'CraftStep Digital is not only about making shoes. It is about helping students discover pride in their profession, confidence in their skills and motivation to build their future.',
         'journey.eyebrow': 'Core model', 'journey.title': 'Craft → Industry → Market', 'journey.text': 'The project follows the full professional trajectory of a product, from the first student concept to industrial prototype and digital market profile.', 'journey.craft': 'Craft', 'journey.industry': 'Industry', 'journey.market': 'Market',
@@ -1532,7 +1575,22 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
       bg: {
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET проект за обувно производство', metaDescription: 'CraftStep Digital е Erasmus+ KA210-VET проект, който свързва занаятчийското обувно производство, индустриалната изработка, дигиталната идентичност на продукта и пазарно ориентираното обучение в България, Северна Македония и Гърция.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Новини', 'nav.journey': 'Пътят', 'nav.objectives': 'Цели', 'nav.partners': 'Партньори', 'nav.timeline': 'График', 'nav.eqavet': 'EQAVET',
-        'news.eyebrow': 'Новини от проекта', 'news.meta': 'Септември 2026 · Подготовка', 'news.title': 'Подготвяме се за първата среща по CraftStep Digital.', 'news.text': 'Подготовката вече тече. Двата ролбара на CraftStep Digital са готови, а партньорството се подготвя за първата проектна среща. Нямаме търпение да съберем екипа и да започнем пътя от занаята, през производството, до пазара.', 'news.rollup1': 'Занаят → Производство → Пазар', 'news.rollup2': 'Занаятът среща дигиталното',
+        'news.eyebrow': 'Новини от проекта',
+        'news.heading': 'Следвайте пътя на CraftStep Digital.',
+        'news.intro': 'Новини от партньорството, практическите дейности, срещите и резултатите по проекта.',
+        'news.platform.meta': '25 септември 2026 г. · Дигитална платформа',
+        'news.platform.title': 'Официалната дигитална платформа на CraftStep Digital вече е онлайн.',
+        'news.platform.p1': 'craftstepdigital.eu е официалната публична платформа на CraftStep Digital: Learning Shoemaking Through Real Practice. Тя ще документира проекта през целия период на изпълнение и ще събира на едно достъпно място информация за партньорството, дейностите и резултатите.',
+        'news.platform.p2': 'Платформата следва целия път Craft → Industry → Market: практическо обучение по обувно майсторство в България, индустриално производство на обувки в Северна Македония и дигитално пазарно представяне в Гърция. Тук ще бъдат представени целите, работните пакети, партньорите, графикът и подходът за качество по EQAVET.',
+        'news.platform.p3': 'С развитието на проекта платформата ще се допълва с новини от срещи и практически занимания, ученически разработки, прототипи, NFC-базирани дигитални продуктови профили и публични резултати. Целта е не само да представяме информация, а да създадем видима дигитална следа за това как една ученическа идея се превръща в реален и проследим продукт.',
+        'news.platform.link': 'craftstepdigital.eu · Официална платформа на проекта',
+        'news.meeting.meta': '26 септември 2026 г. · Подготовка на проекта',
+        'news.meeting.title': 'Подготвяме се за първата проектна среща по CraftStep Digital.',
+        'news.meeting.p1': 'Партньорството се подготвя за първата проектна среща и практическото начало на съвместната работа. Тази първа стъпка ще събере партньорите около плана за изпълнение, отговорностите и началната фаза на обучителния път Craft → Industry → Market.',
+        'news.meeting.p2': 'Като част от подготовката вече са готови и официалните визуални материали на CraftStep Digital. Двата проектни ролбара представят пътя на една обувка през три държави и връзката между ученическата идея, реалната практика, QR/NFC свързаността и дигиталната идентичност на продукта.',
+        'news.meeting.p3': 'Ролбарите ще придружават партньорските срещи, обучителните дейности и публичните представяния в България, Северна Македония и Гърция. Очакваме с нетърпение да съберем екипа и да започнем първите практически дейности.',
+        'news.rollup1': 'Една обувка. Три държави. Едно дигитално пътуване.',
+        'news.rollup2': 'Занаятът среща дигиталното',
         'hero.eyebrow': 'Erasmus+ KA210-VET · Покана 2026', 'hero.lead': 'Обучение по обувно производство чрез реална практика.', 'hero.sub': 'От занаятчийски дизайн в България, през индустриално производство в Северна Македония, до пазарно ориентирано дигитално представяне в Гърция.', 'hero.cta1': 'Разгледай пътя', 'hero.cta2': 'Виж партньорството',
         'purpose.eyebrow': 'Защо този проект има смисъл', 'purpose.title': 'Помагаме на младите хора да видят бъдеще в своя занаят.', 'purpose.lead': 'CraftStep Digital показва на учениците, че обувното производство не е остаряла професия, а реална европейска професия, изградена върху умения, технологии и пазарна стойност.', 'purpose.text': 'Чрез разработването на 15 прототипа, индустриално финализиране и дигитална проследимост проектът свързва училищното обучение с реална производствена и пазарна среда. Учениците проследяват как една идея се превръща в продукт, как продуктът получава идентичност и как професионалните умения могат да отворят път към работа и лична увереност.', 'purpose.visual.kicker': 'Цел на проекта', 'purpose.visual.title': 'Професия, в която учениците могат да повярват.', 'purpose.card.craft.title': 'Традиционен занаят', 'purpose.card.craft.text': 'Учениците изграждат практически умения чрез реални резултати в обувното производство.', 'purpose.card.digital.title': 'Дигитална идентичност', 'purpose.card.digital.text': 'Всеки продукт получава NFC профил и документиран производствен път.', 'purpose.card.sustain.title': 'Устойчиво мислене', 'purpose.card.sustain.text': 'Моделът насърчава трайни продукти, отговорност към ресурсите и соларно захранена видимост.', 'purpose.card.future.title': 'От класната стая до пазара', 'purpose.card.future.text': 'Учениците виждат как трудът им може да бъде представен, оценен и свързан с реални възможности.', 'purpose.quote': 'CraftStep Digital не е само проект за изработка на обувки. Това е проект, който помага на учениците да открият гордост в професията си, увереност в уменията си и мотивация да градят бъдещето си.',
         'journey.eyebrow': 'Основен модел', 'journey.title': 'Занаят → Индустрия → Пазар', 'journey.text': 'Проектът проследява пълната професионална траектория на продукта, от първата ученическа идея до индустриален прототип и дигитален пазарен профил.', 'journey.craft': 'Занаят', 'journey.industry': 'Индустрия', 'journey.market': 'Пазар', 'country.bulgaria': 'България', 'country.northmacedonia': 'Северна Македония', 'country.greece': 'Гърция',
@@ -1545,7 +1603,22 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
       mk: {
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET проект за чевларство', metaDescription: 'CraftStep Digital е Erasmus+ KA210-VET проект што ги поврзува занаетчиското чевларство, индустриското производство, дигиталниот идентитет на производот и пазарно ориентираното учење во Бугарија, Северна Македонија и Грција.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Новости', 'nav.journey': 'Патека', 'nav.objectives': 'Цели', 'nav.partners': 'Партнери', 'nav.timeline': 'План', 'nav.eqavet': 'EQAVET',
-        'news.eyebrow': 'Новости од проектот', 'news.meta': 'Септември 2026 · Подготовка', 'news.title': 'Се подготвуваме за првата средба на CraftStep Digital.', 'news.text': 'Подготовките се во тек. Двата рол-ап банери на CraftStep Digital се подготвени, а партнерството се организира за првата проектна средба. Со нетрпение очекуваме да го собереме тимот и да ја започнеме патеката од занает, преку индустрија, до пазар.', 'news.rollup1': 'Занает → Индустрија → Пазар', 'news.rollup2': 'Занаетот го среќава дигиталното',
+        'news.eyebrow': 'Новости од проектот',
+        'news.heading': 'Следете го патот на CraftStep Digital.',
+        'news.intro': 'Новости од партнерството, практичните активности, средбите и резултатите од проектот.',
+        'news.platform.meta': '25 септември 2026 · Дигитална платформа',
+        'news.platform.title': 'Официјалната дигитална платформа на CraftStep Digital е онлајн.',
+        'news.platform.p1': 'craftstepdigital.eu е официјалната јавна платформа на CraftStep Digital: Learning Shoemaking Through Real Practice. Таа ќе го документира проектот во текот на спроведувањето и ќе ги обедини партнерството, активностите и резултатите во еден достапен дигитален простор.',
+        'news.platform.p2': 'Платформата ја следи целата патека Craft → Industry → Market: практично занаетчиско учење во Бугарија, индустриско производство на обувки во Северна Македонија и дигитална пазарна презентација во Грција. Посетителите ќе најдат информации за целите, работните пакети, партнерите, планот и EQAVET пристапот за квалитет.',
+        'news.platform.p3': 'Како што се развива проектот, платформата ќе се дополнува со новости од средби и практични сесии, ученички работи, прототипи, NFC-базирани дигитални профили на производи и јавни резултати. Целта е да создадеме видлива дигитална трага за тоа како ученичка идеја станува реален и следлив производ.',
+        'news.platform.link': 'craftstepdigital.eu · Официјална проектна платформа',
+        'news.meeting.meta': '26 септември 2026 · Подготовка на проектот',
+        'news.meeting.title': 'Се подготвуваме за првата проектна средба на CraftStep Digital.',
+        'news.meeting.p1': 'Партнерството се подготвува за првата проектна средба и практичниот почеток на заедничката работа. Овој прв чекор ќе ги собере партнерите околу планот за спроведување, одговорностите и почетната фаза на патеката Craft → Industry → Market.',
+        'news.meeting.p2': 'Како дел од подготовката, подготвени се и официјалните визуелни материјали на CraftStep Digital. Двата проектни roll-up банери го прикажуваат патот на една обувка низ три држави и врската меѓу ученичката идеја, реалната практика, QR/NFC поврзувањето и дигиталниот идентитет на производот.',
+        'news.meeting.p3': 'Roll-up банерите ќе ги придружуваат партнерските средби, активностите за учење и јавните презентации во Бугарија, Северна Македонија и Грција. Со нетрпение очекуваме да го собереме тимот и да ги започнеме првите практични активности.',
+        'news.rollup1': 'Една обувка. Три држави. Едно дигитално патување.',
+        'news.rollup2': 'Занаетот го среќава дигиталното',
         'hero.eyebrow': 'Erasmus+ KA210-VET · Повик 2026', 'hero.lead': 'Учење чевларство преку реална практика.', 'hero.sub': 'Од занаетчиски дизајн во Бугарија, преку индустриско производство во Северна Македонија, до пазарно ориентирана дигитална презентација во Грција.', 'hero.cta1': 'Истражи ја патеката', 'hero.cta2': 'Види го партнерството',
         'purpose.eyebrow': 'Зошто овој проект е важен', 'purpose.title': 'Им помагаме на младите да видат иднина во својот занает.', 'purpose.lead': 'CraftStep Digital им покажува на учениците дека производството на обувки не е застарена професија, туку реална европска професија изградена врз вештини, технологија и пазарна вредност.', 'purpose.text': 'Преку развој на 15 прототипи, индустриско финализирање и дигитална следливост, проектот го поврзува училишното учење со реална производствена и пазарна средина. Учениците следат како идеја станува производ, како производот добива идентитет и како професионалните вештини можат да отворат пат кон вработување и лична самодоверба.', 'purpose.visual.kicker': 'Цел на проектот', 'purpose.visual.title': 'Професија во која учениците можат да веруваат.', 'purpose.card.craft.title': 'Традиционален занает', 'purpose.card.craft.text': 'Учениците градат практични вештини преку конкретни резултати во изработката на обувки.', 'purpose.card.digital.title': 'Дигитален идентитет', 'purpose.card.digital.text': 'Секој производ добива NFC профил и документирана производствена патека.', 'purpose.card.sustain.title': 'Одржливо размислување', 'purpose.card.sustain.text': 'Моделот промовира трајни производи, свест за ресурси и соларно напојувана видливост.', 'purpose.card.future.title': 'Од училница до пазар', 'purpose.card.future.text': 'Учениците гледаат како нивната работа може да биде претставена, вреднувана и поврзана со реални можности.', 'purpose.quote': 'CraftStep Digital не е само за изработка на обувки. Тој им помага на учениците да откријат гордост во професијата, доверба во вештините и мотивација да ја градат својата иднина.',
         'journey.eyebrow': 'Основен модел', 'journey.title': 'Занает → Индустрија → Пазар', 'journey.text': 'Проектот ја следи целата професионална траекторија на производот, од првата ученичка идеја до индустриски прототип и дигитален пазарен профил.', 'journey.craft': 'Занает', 'journey.industry': 'Индустрија', 'journey.market': 'Пазар', 'country.bulgaria': 'Бугарија', 'country.northmacedonia': 'Северна Македонија', 'country.greece': 'Грција',
@@ -1558,7 +1631,22 @@ M111 407 C171 426 255 440 356 445 L748 452 C838 454 912 433 949 397 C938 430 900
       el: {
         metaTitle: 'CraftStep Digital | Erasmus+ KA210-VET έργο υποδηματοποιίας', metaDescription: 'Το CraftStep Digital είναι έργο Erasmus+ KA210-VET που συνδέει τη βιοτεχνική υποδηματοποιία, τη βιομηχανική παραγωγή, την ψηφιακή ταυτότητα προϊόντος και τη μάθηση με προσανατολισμό στην αγορά σε Βουλγαρία, Βόρεια Μακεδονία και Ελλάδα.',
         'brand.title': 'CraftStep Digital', 'brand.sub': 'KA210-VET', 'nav.news': 'Νέα', 'nav.journey': 'Διαδρομή', 'nav.objectives': 'Στόχοι', 'nav.partners': 'Εταίροι', 'nav.timeline': 'Χρονοδιάγραμμα', 'nav.eqavet': 'EQAVET',
-        'news.eyebrow': 'Νέα του έργου', 'news.meta': 'Σεπτέμβριος 2026 · Προετοιμασία', 'news.title': 'Ετοιμαζόμαστε για την πρώτη συνάντηση του CraftStep Digital.', 'news.text': 'Οι προετοιμασίες έχουν ξεκινήσει. Τα δύο roll-up του CraftStep Digital είναι έτοιμα και η σύμπραξη οργανώνεται για την πρώτη συνάντηση του έργου. Ανυπομονούμε να συναντηθεί η ομάδα και να ξεκινήσει η διαδρομή από την τέχνη, στη βιομηχανία και στην αγορά.', 'news.rollup1': 'Τέχνη → Βιομηχανία → Αγορά', 'news.rollup2': 'Η τέχνη συναντά το ψηφιακό',
+        'news.eyebrow': 'Νέα του έργου',
+        'news.heading': 'Ακολουθήστε τη διαδρομή του CraftStep Digital.',
+        'news.intro': 'Νέα από τη σύμπραξη, τις πρακτικές δραστηριότητες, τις συναντήσεις και τα αποτελέσματα του έργου.',
+        'news.platform.meta': '25 Σεπτεμβρίου 2026 · Ψηφιακή πλατφόρμα',
+        'news.platform.title': 'Η επίσημη ψηφιακή πλατφόρμα του CraftStep Digital είναι πλέον online.',
+        'news.platform.p1': 'Το craftstepdigital.eu είναι η επίσημη δημόσια πλατφόρμα του CraftStep Digital: Learning Shoemaking Through Real Practice. Θα τεκμηριώνει το έργο σε όλη τη διάρκεια υλοποίησής του και θα συγκεντρώνει τη σύμπραξη, τις δραστηριότητες και τα αποτελέσματα σε έναν προσβάσιμο ψηφιακό χώρο.',
+        'news.platform.p2': 'Η πλατφόρμα ακολουθεί ολόκληρη τη διαδρομή Craft → Industry → Market: πρακτική μαθητεία στη Βουλγαρία, βιομηχανική παραγωγή υποδημάτων στη Βόρεια Μακεδονία και ψηφιακή παρουσίαση στην αγορά στην Ελλάδα. Οι επισκέπτες θα βρίσκουν πληροφορίες για τους στόχους, τα πακέτα εργασίας, τους εταίρους, το χρονοδιάγραμμα και την προσέγγιση ποιότητας EQAVET.',
+        'news.platform.p3': 'Καθώς εξελίσσεται το έργο, η πλατφόρμα θα εμπλουτίζεται με νέα από συναντήσεις και πρακτικές δραστηριότητες, εργασίες μαθητών, πρωτότυπα, ψηφιακά προφίλ προϊόντων με NFC και δημόσια αποτελέσματα. Στόχος είναι να δημιουργηθεί ένα ορατό ψηφιακό αποτύπωμα για το πώς μια μαθητική ιδέα γίνεται πραγματικό και ιχνηλάσιμο προϊόν.',
+        'news.platform.link': 'craftstepdigital.eu · Επίσημη πλατφόρμα του έργου',
+        'news.meeting.meta': '26 Σεπτεμβρίου 2026 · Προετοιμασία έργου',
+        'news.meeting.title': 'Προετοιμαζόμαστε για την πρώτη συνάντηση του CraftStep Digital.',
+        'news.meeting.p1': 'Η σύμπραξη προετοιμάζεται για την πρώτη συνάντηση του έργου και την πρακτική έναρξη της κοινής εργασίας. Το πρώτο αυτό βήμα θα φέρει τους εταίρους μαζί γύρω από το σχέδιο υλοποίησης, τις ευθύνες και την αρχική φάση της διαδρομής Craft → Industry → Market.',
+        'news.meeting.p2': 'Στο πλαίσιο της προετοιμασίας είναι έτοιμο και το επίσημο οπτικό υλικό του CraftStep Digital. Τα δύο roll-up παρουσιάζουν τη διαδρομή ενός παπουτσιού σε τρεις χώρες και τη σύνδεση ανάμεσα στη μαθητική ιδέα, την πραγματική πρακτική, τη συνδεσιμότητα QR/NFC και την ψηφιακή ταυτότητα του προϊόντος.',
+        'news.meeting.p3': 'Τα roll-up θα συνοδεύουν τις συναντήσεις των εταίρων, τις μαθησιακές δραστηριότητες και τις δημόσιες παρουσιάσεις στη Βουλγαρία, τη Βόρεια Μακεδονία και την Ελλάδα. Ανυπομονούμε να συναντηθεί η ομάδα και να ξεκινήσουν οι πρώτες πρακτικές δραστηριότητες.',
+        'news.rollup1': 'Ένα παπούτσι. Τρεις χώρες. Μία ψηφιακή διαδρομή.',
+        'news.rollup2': 'Η τέχνη συναντά το ψηφιακό',
         'hero.eyebrow': 'Erasmus+ KA210-VET · Πρόσκληση 2026', 'hero.lead': 'Μάθηση στην υποδηματοποιία μέσα από πραγματική πρακτική.', 'hero.sub': 'Από τον βιοτεχνικό σχεδιασμό στη Βουλγαρία, στη βιομηχανική παραγωγή στη Βόρεια Μακεδονία και στην ψηφιακή παρουσίαση με προσανατολισμό στην αγορά στην Ελλάδα.', 'hero.cta1': 'Δείτε τη διαδρομή', 'hero.cta2': 'Δείτε την εταιρική σχέση',
         'purpose.eyebrow': 'Γιατί έχει σημασία το έργο', 'purpose.title': 'Βοηθάμε τους νέους να δουν μέλλον στην τέχνη τους.', 'purpose.lead': 'Το CraftStep Digital δείχνει στους μαθητές ότι η υποδηματοποιία δεν είναι ένα παρωχημένο επάγγελμα, αλλά ένα πραγματικό ευρωπαϊκό επάγγελμα που βασίζεται σε δεξιότητες, τεχνολογία και αξία στην αγορά.', 'purpose.text': 'Μέσα από την ανάπτυξη 15 πρωτοτύπων, τη βιομηχανική ολοκλήρωση και την ψηφιακή ιχνηλασιμότητα, το έργο συνδέει τη σχολική μάθηση με πραγματικά περιβάλλοντα παραγωγής και αγοράς. Οι μαθητές βλέπουν πώς μια ιδέα γίνεται προϊόν, πώς το προϊόν αποκτά ταυτότητα και πώς οι επαγγελματικές δεξιότητες μπορούν να ανοίξουν δρόμο προς την εργασία και την προσωπική αυτοπεποίθηση.', 'purpose.visual.kicker': 'Σκοπός του έργου', 'purpose.visual.title': 'Ένα επάγγελμα στο οποίο οι μαθητές μπορούν να πιστέψουν.', 'purpose.card.craft.title': 'Παραδοσιακή τέχνη', 'purpose.card.craft.text': 'Οι μαθητές αναπτύσσουν πρακτικές δεξιότητες μέσα από απτά αποτελέσματα στην υποδηματοποιία.', 'purpose.card.digital.title': 'Ψηφιακή ταυτότητα', 'purpose.card.digital.text': 'Κάθε προϊόν αποκτά προφίλ NFC και τεκμηριωμένη διαδρομή παραγωγής.', 'purpose.card.sustain.title': 'Βιώσιμη σκέψη', 'purpose.card.sustain.text': 'Το μοντέλο προωθεί ανθεκτικά προϊόντα, επίγνωση πόρων και ορατότητα με ηλιακή ενέργεια.', 'purpose.card.future.title': 'Από την τάξη στην αγορά', 'purpose.card.future.text': 'Οι μαθητές βλέπουν πώς η εργασία τους μπορεί να παρουσιαστεί, να εκτιμηθεί και να συνδεθεί με πραγματικές ευκαιρίες.', 'purpose.quote': 'Το CraftStep Digital δεν αφορά μόνο την κατασκευή παπουτσιών. Βοηθά τους μαθητές να ανακαλύψουν υπερηφάνεια για το επάγγελμά τους, αυτοπεποίθηση στις δεξιότητές τους και κίνητρο να χτίσουν το μέλλον τους.',
         'journey.eyebrow': 'Βασικό μοντέλο', 'journey.title': 'Τέχνη → Βιομηχανία → Αγορά', 'journey.text': 'Το έργο ακολουθεί την πλήρη επαγγελματική πορεία ενός προϊόντος, από την πρώτη ιδέα του μαθητή έως το βιομηχανικό πρωτότυπο και το ψηφιακό προφίλ αγοράς.', 'journey.craft': 'Τέχνη', 'journey.industry': 'Βιομηχανία', 'journey.market': 'Αγορά', 'country.bulgaria': 'Βουλγαρία', 'country.northmacedonia': 'Βόρεια Μακεδονία', 'country.greece': 'Ελλάδα',

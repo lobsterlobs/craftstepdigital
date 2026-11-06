@@ -1269,6 +1269,18 @@
         line-height:1.15;
       }
     }
+
+/* Resources header dropdown */
+.main-nav .resources-menu{position:relative;flex:0 0 auto}
+.main-nav .resources-menu summary{list-style:none;cursor:pointer;padding:10px 12px;border-radius:999px;font-size:13px;font-weight:800;color:rgba(23,50,58,.72);white-space:nowrap}
+.main-nav .resources-menu summary::-webkit-details-marker{display:none}
+.main-nav .resources-menu summary::after{content:"⌄";margin-left:7px}
+.main-nav .resources-menu[open] summary,.main-nav .resources-menu summary:hover{background:rgba(23,50,58,.08)}
+.main-nav .resources-dropdown{position:absolute;top:calc(100% + 12px);right:0;min-width:255px;display:grid;gap:4px;padding:10px;background:#fffaf2;border:1px solid rgba(23,50,58,.16);border-radius:18px;box-shadow:0 20px 55px rgba(37,31,22,.18);z-index:6000}
+.main-nav .resources-dropdown a{display:block;white-space:nowrap;padding:11px 13px;font-weight:700;border-radius:9px;font-size:13px}
+.main-nav .resources-dropdown a:hover{background:rgba(29,95,153,.10);color:#123e66}
+@media(min-width:981px){.site-header{grid-template-columns:220px minmax(0,1fr) 185px;width:min(1320px,calc(100% - 28px));gap:8px}.main-nav{gap:0}.main-nav>a,.main-nav .resources-menu summary{font-size:12px;padding:10px 8px}.brand-logo{width:98px}.brand-text strong{font-size:16px}.language-switch a{padding:10px 8px}}
+@media(max-width:980px){.main-nav .resources-menu{width:100%}.main-nav .resources-menu summary{padding:16px 18px;font-size:16px;background:rgba(23,50,58,.04);border-radius:999px}.main-nav .resources-dropdown{position:static;min-width:0;box-shadow:none;margin-top:7px;border-radius:14px}.main-nav .resources-dropdown a{white-space:normal;padding:13px 18px;font-size:15px}}
 </style>
 <link href="https://craftstepdigital.eu/?lang=en" hreflang="en" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=bg" hreflang="bg" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=mk" hreflang="mk" rel="alternate"/><link href="https://craftstepdigital.eu/?lang=el" hreflang="el" rel="alternate"/></head>
 <body>
@@ -1289,6 +1301,7 @@
 <a data-i18n="nav.students" href="#students">Students</a>
 <a data-i18n="nav.partners" href="#partners">Partners</a>
 <a data-i18n="nav.timeline" href="#timeline">Timeline</a>
+<details class="resources-menu"><summary data-i18n="nav.resources">Resources</summary><div class="resources-dropdown"><a data-i18n="nav.resources.general" href="resources/general.html">General documents</a><a data-i18n="nav.resources.wp1" href="resources/wp1.html">WP1 · Craft</a><a data-i18n="nav.resources.wp2" href="resources/wp2.html">WP2 · Industry</a><a data-i18n="nav.resources.wp3" href="resources/wp3.html">WP3 · Market &amp; Digital</a><a data-i18n="nav.resources.all" href="resources/index.html">All resources</a></div></details>
 <a data-i18n="nav.eqavet" href="#quality">EQAVET</a>
 </nav>
 <nav aria-label="Language switcher" class="language-switch"><a class="active" data-lang="en" href="javascript:void(0)" lang="en">EN</a><span>/</span><a data-lang="bg" href="javascript:void(0)" lang="bg">BG</a><span>/</span><a data-lang="mk" href="javascript:void(0)" lang="mk">MK</a><span>/</span><a data-lang="el" href="javascript:void(0)" lang="el">EL</a></nav>
@@ -1562,6 +1575,7 @@
 <a href="resources/summary.html" data-i18n="footer.resource.summary">Project summary</a>
 <a href="resources/news.html" data-i18n="footer.resource.news">News</a>
 <a href="resources/gallery.html" data-i18n="footer.resource.gallery">Gallery</a>
+<a href="resources/index.html" data-i18n="nav.resources">Resources</a>
 <a href="resources/downloads.html" data-i18n="footer.resource.downloads">Downloads</a>
 <a href="resources/deliverables.html" data-i18n="footer.resource.deliverables">Deliverables</a>
 </div>

@@ -38,7 +38,7 @@ main{max-width:1180px;margin:auto;padding:76px 22px 100px}.eyebrow{text-transfor
 <p data-i18n="invite.p2">We invite citizens, guests of Peshtera, representatives of local institutions and businesses, parents, young people and everyone interested in vocational education and shoemaking to join us.</p>
 <p data-i18n="invite.p3">The meeting will take place at United School “Lyuben Karavelov”, 15 Veselin Staykov Street, Peshtera. More information about the project and its progress is available at craftstepdigital.eu.</p>
 <figure style="margin:28px 0 0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px">
-<img src="assets/news/craftstep-invitation-12-11-2026.jpg" alt="CraftStep Digital invitation for the practical WP1 session in Peshtera on 12 November 2026" style="display:block;width:100%;height:auto;border-radius:14px;background:#fff">
+<img src="assets/news/craftstep-invitation-12-11-2026.jpg" data-original-prefix="invitewebp" data-original-parts="3" data-original-mime="image/webp" alt="CraftStep Digital invitation for the practical WP1 session in Peshtera on 12 November 2026" style="display:block;width:100%;height:auto;border-radius:14px;background:#fff">
 <figcaption data-i18n="invite.fig" style="text-align:center;color:var(--muted);font-size:13px;padding-top:10px">Open invitation for the practical CraftStep Digital session in Peshtera.</figcaption>
 </figure>
 </article>
@@ -109,7 +109,7 @@ setLang(localStorage.getItem('craftstep-lang')||new URLSearchParams(location.sea
         if(!r.ok) throw new Error('Part '+n+' failed');
         parts.push((await r.text()).trim());
       }
-      img.src='data:image/jpeg;base64,'+parts.join('');
+      img.src='data:'+(img.dataset.originalMime||'image/jpeg')+';base64,'+parts.join('');
       img.removeAttribute('data-original-prefix');
       img.removeAttribute('data-original-parts');
     }catch(e){
